@@ -1,4 +1,7 @@
-from file_counter import file_counter
+import pytest
+from file_counter.file_counter import count_lines
 
-def test_file_counter_valid_file():
-    assert 5 == file_counter.count_lines("testdata/file_with_5_lines.txt")
+def test_count_lines_correct():
+    
+    result = count_lines("testdata/file_with_5_lines.txt")
+    assert result == 5
